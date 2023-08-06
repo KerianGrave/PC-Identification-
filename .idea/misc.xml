@@ -3,6 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/231322/Desktop/QR-Code-Scanner-Generator/app/src/main/res/layout/activity_generate_qrcode.xml" value="0.264" />
+        <entry key="..\:/Users/231322/Desktop/QR-Code-Scanner-Generator/app/src/main/res/layout/activity_home.xml" value="0.25" />
+        <entry key="..\:/Users/231322/Desktop/QR-Code-Scanner-Generator/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/231322/Desktop/QR-Code-Scanner-Generator/app/src/main/res/layout/activity_pclist.xml" value="0.25" />
+        <entry key="..\:/Users/231322/Desktop/QR-Code-Scanner-Generator/app/src/main/res/layout/activity_scan_qrcode.xml" value="0.25" />
+        <entry key="..\:/Users/231322/Desktop/QR-Code-Scanner-Generator/app/src/main/res/layout/activity_viewdataactivity.xml" value="0.25" />
+        <entry key="..\:/Users/231322/Desktop/QR-Code-Scanner-Generator/app/src/main/res/layout/item.xml" value="0.2" />
         <entry key="..\:/Users/Hp/AndroidStudioProjects/QRCodeGeneratorScanner/app/src/main/res/drawable/button_back.xml" value="0.1" />
         <entry key="..\:/Users/Hp/AndroidStudioProjects/QRCodeGeneratorScanner/app/src/main/res/layout/activity_generate_qrcode.xml" value="0.2" />
         <entry key="..\:/Users/Hp/AndroidStudioProjects/QRCodeGeneratorScanner/app/src/main/res/layout/activity_home.xml" value="0.264" />

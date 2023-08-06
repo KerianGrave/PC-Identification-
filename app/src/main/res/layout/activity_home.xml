@@ -25,7 +25,7 @@
         android:layout_marginEnd="20dp"
         android:gravity="center"
         android:padding="4dp"
-        android:text="Welcome to QR Code \n Scanner and Generator"
+        android:text="Welcome to PC Identification"
         android:textAlignment="center"
         android:textColor="@color/yellow"
         android:textSize="20sp"
@@ -53,6 +53,18 @@
         android:text="Scan QR Code"
         android:textAllCaps="false"
         android:layout_below="@+id/QRCodeGeneratorBtn"
+        android:background="@drawable/button_back" />
+
+    <Button
+        android:id="@+id/viewdetailsBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:text="View Existing Info"
+        android:textAllCaps="false"
+        android:layout_below="@+id/QRCodeScannerBtn"
         android:background="@drawable/button_back" />
 
 

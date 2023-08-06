@@ -4,15 +4,21 @@ import static android.Manifest.permission.CAMERA;
 import static android.Manifest.permission.VIBRATE;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
-import android.app.Activity;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import eu.livotov.labs.android.camview.ScannerLiveView;
 import eu.livotov.labs.android.camview.scanner.decoder.zxing.ZXDecoder;
@@ -21,6 +27,7 @@ public class ScanQRCodeActivity extends AppCompatActivity {
 
     private ScannerLiveView scannerLiveView;
     private TextView scannedTextView;
+    private DatabaseReference reference = FirebaseDatabase.getInstance().getReference();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,7 +61,25 @@ public class ScanQRCodeActivity extends AppCompatActivity {
 
             @Override
             public void onCodeScanned(String data) {
-                scannedTextView.setText(data);
+                reference.child("PC").child(data).addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        if(snapshot.exists()){
+                            PC pc = snapshot.getValue(PC.class);
+                            String str = "PC No : " + pc.pcno + "\n" +
+                                         "PC Modal : " + pc.model + "\n" +
+                                         "PC Ram : " + pc.ram + "\n" +
+                                         "PC SSD : " + pc.ssd + "\n" +
+                                         "PC Processor : " + pc.processor + "\n";
+                            scannedTextView.setText(str);
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
             }
         });
 

@@ -11,14 +11,24 @@ public class HomeActivity extends AppCompatActivity {
 
     private Button generateQRButton;
     private Button scanQRButton;
+    private Button viewdetailsBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
+        viewdetailsBtn = findViewById(R.id.viewdetailsBtn);
         generateQRButton = findViewById(R.id.QRCodeGeneratorBtn);
         scanQRButton = findViewById(R.id.QRCodeScannerBtn);
+
+        viewdetailsBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(HomeActivity.this, viewdataactivity.class);
+                startActivity(intent);
+            }
+        });
 
         generateQRButton.setOnClickListener(new View.OnClickListener() {
             @Override
